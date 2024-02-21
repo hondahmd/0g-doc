@@ -1,102 +1,13 @@
-# README
+# 0G System
 
-## Overview
+Data availability problem stems from the demand for off-chain verification of executed states, which in turn arises from the trade-off between scalability and security of blockchain systems. The increasing prominence of Layer 2 networks and decentralized AI platforms has made the data availability even more crucial and also made its scalability the primary challenge at present.
 
-ZeroGDA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with ZeroGDA to submit and store their data into [ZeroG Storage](https://github.com/zero-gravity-labs/zerog-storage-client) for later retrieval.
+ZeroGravity (0G in short) is the first data availability system with a built-in general purpose storage layer that is super scalable and decentralized. The scalability of 0G hinges on the idea of separating the workflow of data availability into data publishing lane and data storage lane. Large volume of data transfers happen on the data storage lane that is supported by the storage layer which achieves the horizontal scalability through well designed partitioning, while the data publishing lane guarantees the data availability property through consensus of data availability sampling which only requires tiny data flowing through the consensus protocol to avoid the broadcasting bottleneck. Data storage is an integral part of data availability because it must answer the question of where the data is published.&#x20;
 
-To dive deep into the technical details, continue reading [ZeroGDA protocol spec](<docs/0G DA/>).
+The ZeroGDA (ZGDA) system is a scalable Data Availability (DA) service layer which is directly built on top of a decentralized storage system and addresses the scalability issue by minimizing the data transfer volume required for broadcast. Its general decentralized storage design further enables it to support a variety of availability data types from diversified scenarios not limited to Layer 2 networks but also inclusion of decentralized AI infrastructures.
 
-## Integration
+In informal terms, DA is a guarantee that a given piece of data is available to anyone who wishes to retrieve it. ZGDA is focused on providing DA with both high security and throughput.
 
-Check out [this example](https://github.com/zero-gravity-labs/zerog-da-example-rust) for how to integrate the ZGDA into your own applications.
+At a high level, a DA system is one which accepts blobs of data via some interface and then makes them available to retrievers through another interface.
 
-For detailed public APIs, visit [gRPC API](broken-reference) section.
-
-## Deployment
-
-* For local test environment, [aws-cli](https://aws.amazon.com/cli/) is required.
-* [Local Stack setup](./#localstack)
-* [Disperser](./#disperser)
-* [Retriever](./#retriever)
-
-### LocalStack
-
-Create LocalStack(local aws simulation) docker image and start a docker instance:
-
-```bash
-cd inabox
-
-make deploy-localstack
-```
-
-### Disperser
-
-1. Build binaries:
-
-```
-cd disperser
-make build
-```
-
-2. Run encoder:
-
-```
-make run_encoder
-```
-
-3. Set the cli arguments of run\_batcher in Makefile to proper values. Full list of available configuration parameters are showing below.
-
-```
---batcher.pull-interval 5s
---chain.rpc ETH_RPC_ENDPOINT
---chain.private-key YOUR_PRIVATE_KEY
---chain.receipt-wait-rounds 180
---chain.receipt-wait-interval 1s
---chain.gas-limit 2000000
---batcher.finalizer-interval 300s
---batcher.confirmer-num 3
---batcher.aws.region us-east-1
---batcher.aws.access-key-id localstack
---batcher.aws.secret-access-key localstack
---batcher.aws.endpoint-url http://0.0.0.0:4566
---batcher.s3-bucket-name test-zgda-blobstore
---batcher.dynamodb-table-name test-BlobMetadata
---encoder-socket 0.0.0.0:34000
---batcher.batch-size-limit 50
---batcher.srs-order 300000
---encoding-timeout 10s
---chain-read-timeout 12s
---chain-write-timeout 13s
---batcher.storage.node-url http://0.0.0.0:5678
---batcher.storage.node-url http://0.0.0.0:6789
---batcher.storage.kv-url http://0.0.0.0:7890
---batcher.storage.kv-stream-id 000000000000000000000000000000000000000000000000000000000000f2bd
---batcher.storage.flow-contract FLOW_CONTRACT_ADDR
-```
-
-4. Then run batcher and the main disperser server:
-
-```
-make run_batcher
-
-make run_server
-```
-
-### Retriever
-
-1. Build binaries:
-
-```
-cd retriever
-make build
-```
-
-2. Run the main retriever server:
-
-```
-make run
-```
-
-## Contributing
-
-To make contributions to the project, please follow the guidelines [here](contributing.md).
+The storage layer of 0G consists of a storage network connecting with a separate consensus network. Each storage node actively participates a mining process by submitting the proof of accessibility for specific piece of data to the smart contract deployed on the consensus network. Once the proof is validated by the smart contract, the storage node gets rewarded accordingly. The partitioning is enabled through rewarding more to the node for storing the specific data that belong to the same partition with the node. This incentive-based mechanism rewards the nodes for contributions rather than punishing them for misbehaviors, so it can better encourage nodes to participate in the maintenance of the network, and hence can promote the network to achieve better scalability in practice. 0G storage is also designed as a general storage system with multiple stacks of abstractions and structures including an append-only log layer for archiving unstructured data and also a key-value layer for managing mutable and structured data. This allows 0G to support reliable data indexing and a greater variety of availability data types from Layer 2 and AI scenarios.

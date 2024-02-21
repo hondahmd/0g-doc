@@ -1,10 +1,10 @@
 # Table of contents
 
-* [README](README.md)
+* [0G System](README.md)
 * [docs](docs/README.md)
   * [Overview](docs/overview.md)
   * [ZeroGDA](<docs/0G DA/README.md>)
-    * [Introduction](<docs/0G DA/introduction.md>)
+    * [0G System](<docs/0G DA/readme.md>)
     * [Architecture](<docs/0G DA/architecture/README.md>)
       * [Disperser](<docs/0G DA/architecture/disperser.md>)
       * [Batcher](<docs/0G DA/architecture/batcher.md>)
@@ -21,7 +21,6 @@
       * [KZG and FFT utils](<docs/0G DA/pkg/kzg.md>)
     * [Glossary](<docs/0G DA/definitions.md>)
   * [ZeroG Sorage](<docs/0G Storage/README.md>)
-    * [Introduction](<docs/0G Storage/introduction.md>)
     * [Architecture](<docs/0G Storage/architecture.md>)
     * [Log System](<docs/0G Storage/log-system.md>)
     * [K-V Store](<docs/0G Storage/k-v-store.md>)
