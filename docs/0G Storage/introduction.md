@@ -1,4 +1,4 @@
-# ZeroG Storage
+# Introduction
 
 ## Overview
 
@@ -7,8 +7,6 @@ ZeroG Storage is the storage layer for the ZeroGravity data availability (DA) sy
 * Buit-in - It is natively built into the ZeroGravity DA system for data storage and retrieval.
 * General purpose - It is designed to support atomic transactions, mutable kv stores as well as archive log systems to enable wide range of applications with various data types.
 * Incentive - Instead of being just a decentralized database, ZeroG Storage introduces PoRA mining algorithm to incentivize storage network participants.
-
-To dive deep into the technical details, continue reading [ZeroG Storage Spec.](doc/)
 
 ## Integration
 
@@ -24,7 +22,7 @@ We provide a [SDK](https://github.com/zero-gravity-labs/js-zerog-storage-sdk) fo
 
 ## Deployment
 
-Please refer to [Deployment](doc/install.md) page for detailed steps to compile and start a ZeroG Storage node.
+Please refer to [Deployment](../0G%20Storage/doc/install.md) page for detailed steps to compile and start a ZeroG Storage node.
 
 ## Test
 
@@ -73,4 +71,4 @@ python sync_test.py
 
 ## Contributing
 
-To make contributions to the project, please follow the guidelines [here](contributing.md).
+To make contributions to the project, please follow the guidelines [here](../0G%20Storage/contributing.md).

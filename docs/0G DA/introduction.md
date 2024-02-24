@@ -1,16 +1,14 @@
-# 0G DA 
+# Introduction
 
 ## Overview
 
-ZeroGDA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with ZeroGDA to submit and store their data into [ZeroG Storage](https://github.com/zero-gravity-labs/zerog-storage-client) for later retrieval.
-
-To dive deep into the technical details, continue reading [ZeroGDA protocol spec](./).
+ZeroGDA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with ZeroGDA to submit and store their data into [ZeroG Storage](<../0G Storage/>) for later retrieval.
 
 ## Integration
 
 Check out [this example](https://github.com/zero-gravity-labs/zerog-da-example-rust) for how to integrate the ZGDA into your own applications.
 
-For detailed public APIs, visit [gRPC API](broken-reference) section.
+For detailed public APIs, visit [gRPC API](../0G%20DA/broken-reference/) section.
 
 ## Deployment
 
@@ -47,20 +45,13 @@ make run_encoder
 3. Set the cli arguments of run\_batcher in Makefile to proper values. Full list of available configuration parameters are showing below.
 
 ```
+# default
 --batcher.pull-interval 5s
---chain.rpc ETH_RPC_ENDPOINT
---chain.private-key YOUR_PRIVATE_KEY
 --chain.receipt-wait-rounds 180
 --chain.receipt-wait-interval 1s
 --chain.gas-limit 2000000
 --batcher.finalizer-interval 300s
 --batcher.confirmer-num 3
---batcher.aws.region us-east-1
---batcher.aws.access-key-id localstack
---batcher.aws.secret-access-key localstack
---batcher.aws.endpoint-url http://0.0.0.0:4566
---batcher.s3-bucket-name test-zgda-blobstore
---batcher.dynamodb-table-name test-BlobMetadata
 --encoder-socket 0.0.0.0:34000
 --batcher.batch-size-limit 50
 --batcher.srs-order 300000
@@ -71,6 +62,17 @@ make run_encoder
 --batcher.storage.node-url http://0.0.0.0:6789
 --batcher.storage.kv-url http://0.0.0.0:7890
 --batcher.storage.kv-stream-id 000000000000000000000000000000000000000000000000000000000000f2bd
+--batcher.aws.region us-east-2
+
+# custom
+# aws
+--batcher.aws.access-key-id localstack
+--batcher.aws.secret-access-key localstack
+--batcher.s3-bucket-name test-zgda-blobstore
+--batcher.dynamodb-table-name test-BlobMetadata
+# chain
+--chain.rpc ETH_RPC_ENDPOINT
+--chain.private-key YOUR_PRIVATE_KEY
 --batcher.storage.flow-contract FLOW_CONTRACT_ADDR
 ```
 
