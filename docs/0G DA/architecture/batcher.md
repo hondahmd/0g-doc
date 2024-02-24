@@ -29,4 +29,4 @@ The confirmer is used to query the tx receipt from the on-chain contract to chec
 
 The finalizer is used to check the difference between the confirmed block number and current block number to determine if such transaction is finalized (no reorg) on chain.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Figure 1. Batcher Workflow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/" alt=""><figcaption><p>Figure 1. Batcher Workflow</p></figcaption></figure>
