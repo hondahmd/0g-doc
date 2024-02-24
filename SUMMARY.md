@@ -2,7 +2,6 @@
 
 * [0G System](README.md)
 * [docs](docs/README.md)
-  * [Overview](docs/overview.md)
   * [ZeroG DA](<docs/0G DA/README.md>)
     * [Introduction](<docs/0G DA/introduction.md>)
     * [Architecture](<docs/0G DA/architecture/README.md>)
