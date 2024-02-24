@@ -15,7 +15,7 @@
    5. [Dependent Package](<0G DA/pkg/>)
       * [Encoding](<0G DA/pkg/encoding.md>)
       * [KZG and FFT utils](<0G DA/pkg/kzg.md>)
-   6. [Glossary](broken-reference)
+   6. [Glossary](<0G DA/glossary.md>)
 2. [ZG Storage](<0G Storage/>)
    1. [Introduction](<0G Storage/introduction.md>)
    2. [Architecture](<0G Storage/architecture.md>)

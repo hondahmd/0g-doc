@@ -1,8 +1,8 @@
-# ZeroG DA
+# ZeroG DA Spec
 
 ## Organization
 
-The [ZGDA repo](https://github.com/zero-gravity-labs/zerog-data-avail) is organized as a monorepo, with each project adhering to the "Ben Johnson" project structure style. Within the core project directories (e.g., `core`, `disperser`, `retriever`), the main interfaces and data types are defined at the root of the project, while implementations are organized by dependency.
+The ZGDA repo is organized as a monorepo, with each project adhering to the "Ben Johnson" project structure style. Within the core project directories (e.g., `core`, `disperser`, `retriever`), the main interfaces and data types are defined at the root of the project, while implementations are organized by dependency.
 
 In general, the `core` project contains implementation of all the important business logic responsible for the security guarantees of the ZGDA protocol, while the other projects add the networking layers needed to run the distributed system.
 

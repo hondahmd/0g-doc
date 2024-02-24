@@ -19,7 +19,7 @@
     * [Dependent Package](<docs/0G DA/pkg/README.md>)
       * [Encoding](<docs/0G DA/pkg/encoding.md>)
       * [KZG and FFT utils](<docs/0G DA/pkg/kzg.md>)
-    * [Glossary](docs/0g-da/glossary.md)
+    * [Glossary](<docs/0G DA/glossary.md>)
   * [ZeroG Sorage](<docs/0G Storage/README.md>)
     * [Introduction](<docs/0G Storage/introduction.md>)
     * [Architecture](<docs/0G Storage/architecture.md>)
