@@ -2,20 +2,20 @@
 
 ## Overview
 
-0GDA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with 0GDA to submit and store their data into [0G Storage](<../0G Storage/>) for later retrieval.
+0G DA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with 0G DA to submit and store their data into [0G Storage](<../0G Storage/>) for later retrieval.
 
 ## Integration
 
-Check out [this example](https://github.com/zero-gravity-labs/zerog-da-example-rust) for how to integrate the 0GDA into your own applications.
+Check out [this example](https://github.com/zero-gravity-labs/zerog-da-example-rust) for how to integrate the 0G DA into your own applications.
 
 For detailed public APIs, visit [gRPC API](../0G%20DA/broken-reference/) section.
 
 ## Deployment
 
-* For local test environment, [aws-cli](https://aws.amazon.com/cli/) is required.
-* [Local Stack setup](./#localstack)
-* [Disperser](./#disperser)
-* [Retriever](./#retriever)
+- For local test environment, [aws-cli](https://aws.amazon.com/cli/) is required.
+- [Local Stack setup](./#localstack)
+- [Disperser](./#disperser)
+- [Retriever](./#retriever)
 
 ### LocalStack
 
@@ -42,7 +42,7 @@ make build
 make run_encoder
 ```
 
-3. Set the cli arguments of run\_batcher in Makefile to proper values. Full list of available configuration parameters are showing below.
+3. Set the cli arguments of run_batcher in Makefile to proper values. Full list of available configuration parameters are showing below.
 
 ```
 # default

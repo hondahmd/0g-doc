@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
-* [Service](retriever.md#service)
-  * [Retriever](retriever.md#retriever)
-* [Data Structure](retriever.md#data-structure)
-  * [BlobReply](retriever.md#blobreply)
-  * [BlobRequest](retriever.md#blobrequest)
-* [Scaler Value Types](retriever.md#scalar-value-types)
+- [Service](retriever.md#service)
+  - [Retriever](retriever.md#retriever)
+- [Data Structure](retriever.md#data-structure)
+  - [BlobReply](retriever.md#blobreply)
+  - [BlobRequest](retriever.md#blobrequest)
+- [Scaler Value Types](retriever.md#scalar-value-types)
 
 [Top](retriever.md#top)
 
@@ -15,26 +15,26 @@
 
 ### Retriever
 
-| Method Name  | Request Type                            | Response Type                       | Description                                                                                                         |
-| ------------ | --------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| RetrieveBlob | [BlobRequest](retriever.md#blobrequest) | [BlobReply](retriever.md#blobreply) | This fans out request to 0GDA Nodes to retrieve the chunks and returns the reconstructed original blob in response. |
+| Method Name  | Request Type                            | Response Type                       | Description                                                                                                          |
+| ------------ | --------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| RetrieveBlob | [BlobRequest](retriever.md#blobrequest) | [BlobReply](retriever.md#blobreply) | This fans out request to 0G DA Nodes to retrieve the chunks and returns the reconstructed original blob in response. |
 
 ## Data Structure
 
 ### BlobRequest
 
-| Field                    | Type   | Label | Description                                                                                                                                                                                                                          |
-| ------------------------ | ------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| batch\_header\_hash      | bytes  |       | The hash of the ReducedBatchHeader defined onchain, see: https://github.com/zero-gravity-labs/zerog-data-avail/blob/master/contracts/src/interfaces/IZGDAServiceManager.sol#L43 This identifies the batch that this blob belongs to. |
-| blob\_index              | uint32 |       | Which blob in the batch this is requesting for (note: a batch is logically an ordered list of blobs).                                                                                                                                |
-| reference\_block\_number | uint32 |       | The Ethereum block number at which the batch for this blob was constructed.                                                                                                                                                          |
-| quorum\_id               | uint32 |       | Which quorum of the blob this is requesting for (note a blob can participate in multiple quorums).                                                                                                                                   |
+| Field                  | Type   | Label | Description                                                                                                                                                                                                                          |
+| ---------------------- | ------ | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| batch_header_hash      | bytes  |       | The hash of the ReducedBatchHeader defined onchain, see: https://github.com/zero-gravity-labs/zerog-data-avail/blob/master/contracts/src/interfaces/IZGDAServiceManager.sol#L43 This identifies the batch that this blob belongs to. |
+| blob_index             | uint32 |       | Which blob in the batch this is requesting for (note: a batch is logically an ordered list of blobs).                                                                                                                                |
+| reference_block_number | uint32 |       | The Ethereum block number at which the batch for this blob was constructed.                                                                                                                                                          |
+| quorum_id              | uint32 |       | Which quorum of the blob this is requesting for (note a blob can participate in multiple quorums).                                                                                                                                   |
 
 ### BlobReply
 
-| Field | Type  | Label | Description                                                               |
-| ----- | ----- | ----- | ------------------------------------------------------------------------- |
-| data  | bytes |       | The blob retrieved and reconstructed from the 0GDA Nodes per BlobRequest. |
+| Field | Type  | Label | Description                                                                |
+| ----- | ----- | ----- | -------------------------------------------------------------------------- |
+| data  | bytes |       | The blob retrieved and reconstructed from the 0G DA Nodes per BlobRequest. |
 
 ## Scalar Value Types
 

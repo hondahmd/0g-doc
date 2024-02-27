@@ -2,7 +2,7 @@
 
 ## Data Packaging
 
-**Blob:** Blobs are the fundamental unit of data posted to 0GDA by users.
+**Blob:** Blobs are the fundamental unit of data posted to 0G DA by users.
 
 **Batch:** Batch is an aggregated data of multiple blobs together with the KZG commitments to each blob.
 
@@ -13,4 +13,3 @@
 **Batcher**. The Batcher is an off-chain component which accepts the blob requests from the Disperser and batches multiple blobs together with their KZG commitments into one data packet and send out to the 0G Storage nodes for data storage.
 
 **Retriever**. The Retriever is an off-chain service which implements a protocol for receiving data blobs from 0G Storage nodes. It is also responsible for verifying the authentication and correctness of the data.
-

@@ -2,7 +2,7 @@
 
 ## Overall Requirements
 
-Within 0GDA, blobs are encoded so that they can be scalably distributed among the DA nodes. The 0GDA encoding module is designed to meet the following security requirements:
+Within 0G DA, blobs are encoded so that they can be scalably distributed among the DA nodes. The 0G DA encoding module is designed to meet the following security requirements:
 
 1. Adversarial tolerance for DA nodes: We need to have tolerance to arbitrary adversarial behavior by DA nodes up to some threshold, which is discussed in other sections. Note that simple sharding approaches such as duplicating slices of the blob data have good tolerance to random node dropout, but poor tolerance to worst-case adversarial behavior.
 2. Adversarial tolerance for disperser: We do not want to put trust assumptions on the encoder or rely on fraud proofs to detect if an encoding is done incorrectly.
@@ -47,7 +47,7 @@ Notice that these interfaces only support a global chunk size across all the enc
 
 ## Trustless Encoding via KZG and Reed-Solomon
 
-0GDA uses a combination of Reed-Solomon (RS) erasure coding and KZG polynomial commitments to perform trustless encoding. In this section, we provide a high level overview of how the 0GDA encoding module works and how it achieves these properties.
+0G DA uses a combination of Reed-Solomon (RS) erasure coding and KZG polynomial commitments to perform trustless encoding. In this section, we provide a high level overview of how the 0G DA encoding module works and how it achieves these properties.
 
 ### Basic Reed Solomon Encoding
 
@@ -58,7 +58,7 @@ Basic RS encoding is used to achieve the first requirement of tolerance to adver
 3. This polynomial is evaluated at `NumChunks`\*`ChunkLength` distinct indices.
 4. Chunks are constructed, where each chunk consists of the polynomial evaluations at `ChunkLength` distinct indices.
 
-Notice that given any number of chunks $$M$$ such that $$M^*$$`ChunkLength` > `BlobLength`, via [polynomial interpolation](https://en.wikipedia.org/wiki/Polynomial\_interpolation) it is possible to reconstruct the original polynomial, and therefore its coefficients which represent the original blob. Thus, this basic RS encoding scheme satisfies the requirement of the `Encoder.Encode` interface.
+Notice that given any number of chunks $$M$$ such that $$M^*$$`ChunkLength` > `BlobLength`, via [polynomial interpolation](https://en.wikipedia.org/wiki/Polynomial_interpolation) it is possible to reconstruct the original polynomial, and therefore its coefficients which represent the original blob. Thus, this basic RS encoding scheme satisfies the requirement of the `Encoder.Encode` interface.
 
 ### Validation via KZG
 
@@ -68,9 +68,9 @@ Without modification, RS encoding has the following important problem: Suppose t
 
 KZG commitments provide three important primitives, for a polynomial $$p(X) = \sum_{i}c_iX^i$$:
 
-* `commit(p(X))` returns a `Commitment` which is used to identify the polynomial.
-* `prove(p(X),indices)` returns a `Proof` which can be used to verify that a set of evaluations lies on the polynomial.
-* `verify(Commitment,Proof,evals,indices)` returns a `bool` indicating whether the committed polynomial evaluates to `evals` and the provided `indices`.
+- `commit(p(X))` returns a `Commitment` which is used to identify the polynomial.
+- `prove(p(X),indices)` returns a `Proof` which can be used to verify that a set of evaluations lies on the polynomial.
+- `verify(Commitment,Proof,evals,indices)` returns a `bool` indicating whether the committed polynomial evaluates to `evals` and the provided `indices`.
 
 #### Blob Size Verification
 
@@ -86,6 +86,6 @@ Note: The blob length verification here allows for the blob length to be upper-b
 
 When a DA node receives a `StoreChunks` request, it performs the following validation actions relative to each blob header:
 
-* It uses `GetOperatorAssignment` of the `AssignmentCoordinator` interface to calculate the chunk indices for which it is responsible and the total number of chunks, `TotalChunks`.
-* It instantiates an encoder using the `ChunkLength` from the `BlobHeader` and the `TotalChunks`, and uses `VerifyChunks` to verify that the data contained within the chunks lies on the committed polynomial at the correct indices.
-* The `VerifyChunks` method also verifies that the `Length` contained in the `BlobCommitments` struct is valid based on the `LengthProof`.
+- It uses `GetOperatorAssignment` of the `AssignmentCoordinator` interface to calculate the chunk indices for which it is responsible and the total number of chunks, `TotalChunks`.
+- It instantiates an encoder using the `ChunkLength` from the `BlobHeader` and the `TotalChunks`, and uses `VerifyChunks` to verify that the data contained within the chunks lies on the committed polynomial at the correct indices.
+- The `VerifyChunks` method also verifies that the `Length` contained in the `BlobCommitments` struct is valid based on the `LengthProof`.

@@ -2,24 +2,24 @@
 
 ## Table of Contents
 
-* [Service](disperser.md#service)
-  * [Disperser](disperser.md#disperser)
-* [Data Structure](disperser.md#data-structure)
-  * [BatchHeader](disperser.md#batchheader)
-  * [BatchMetadata](disperser.md#batchmetadata)
-  * [BlobHeader](disperser.md#blobheader)
-  * [BlobInfo](disperser.md#blobinfo)
-  * [BlobQuorumParam](disperser.md#blobquorumparam)
-  * [BlobStatusReply](disperser.md#blobstatusreply)
-  * [BlobStatusRequest](disperser.md#blobstatusrequest)
-  * [BlobVerificationProof](disperser.md#blobverificationproof)
-  * [DisperseBlobReply](disperser.md#disperseblobreply)
-  * [DisperseBlobRequest](disperser.md#disperseblobrequest)
-  * [RetrieveBlobRequest](disperser.md#retrieveblobrequest)
-  * [RetrieveBlobReply](disperser.md#retrieveblobreply)
-  * [SecurityParams](disperser.md#securityparams)
-  * [BlobStatus](disperser.md#blobstatus)
-* [Scalar Value Types](disperser.md#scalar-value-types)
+- [Service](disperser.md#service)
+  - [Disperser](disperser.md#disperser)
+- [Data Structure](disperser.md#data-structure)
+  - [BatchHeader](disperser.md#batchheader)
+  - [BatchMetadata](disperser.md#batchmetadata)
+  - [BlobHeader](disperser.md#blobheader)
+  - [BlobInfo](disperser.md#blobinfo)
+  - [BlobQuorumParam](disperser.md#blobquorumparam)
+  - [BlobStatusReply](disperser.md#blobstatusreply)
+  - [BlobStatusRequest](disperser.md#blobstatusrequest)
+  - [BlobVerificationProof](disperser.md#blobverificationproof)
+  - [DisperseBlobReply](disperser.md#disperseblobreply)
+  - [DisperseBlobRequest](disperser.md#disperseblobrequest)
+  - [RetrieveBlobRequest](disperser.md#retrieveblobrequest)
+  - [RetrieveBlobReply](disperser.md#retrieveblobreply)
+  - [SecurityParams](disperser.md#securityparams)
+  - [BlobStatus](disperser.md#blobstatus)
+- [Scalar Value Types](disperser.md#scalar-value-types)
 
 [Top](disperser.md#top)
 
@@ -47,7 +47,7 @@ Disperser defines the public APIs for dispersing blobs.
 
 ### BlobInfo
 
-BlobInfo contains information needed to confirm the blob against the 0GDA contracts
+BlobInfo contains information needed to confirm the blob against the 0G DA contracts
 
 <table><thead><tr><th>Field</th><th>Type</th><th width="132">Label</th><th>Description</th></tr></thead><tbody><tr><td>blob_header</td><td><a href="disperser.md#blobheader">BlobHeader</a></td><td></td><td></td></tr><tr><td>blob_verification_proof</td><td><a href="disperser.md#blobverificationproof">BlobVerificationProof</a></td><td></td><td></td></tr></tbody></table>
 
@@ -57,7 +57,7 @@ BlobInfo contains information needed to confirm the blob against the 0GDA contra
 
 ### BlobStatusReply
 
-<table><thead><tr><th width="171">Field</th><th width="157">Type</th><th width="138">Label</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><a href="disperser.md#blobstatus">BlobStatus</a></td><td></td><td>The status of the blob.</td></tr><tr><td>info</td><td><a href="disperser.md#blobinfo">BlobInfo</a></td><td></td><td>The blob info needed for clients to confirm the blob against the 0GDA contracts.</td></tr></tbody></table>
+<table><thead><tr><th width="171">Field</th><th width="157">Type</th><th width="138">Label</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><a href="disperser.md#blobstatus">BlobStatus</a></td><td></td><td>The status of the blob.</td></tr><tr><td>info</td><td><a href="disperser.md#blobinfo">BlobInfo</a></td><td></td><td>The blob info needed for clients to confirm the blob against the 0G DA contracts.</td></tr></tbody></table>
 
 ### BlobStatusRequest
 
@@ -81,10 +81,10 @@ BlobStatusRequest is used to query the status of a blob.
 
 RetrieveBlobRequest contains parameters to retrieve the blob.
 
-| Field               | Type   | Label | Description |
-| ------------------- | ------ | ----- | ----------- |
-| batch\_header\_hash | bytes  |       |             |
-| blob\_index         | uint32 |       |             |
+| Field             | Type   | Label | Description |
+| ----------------- | ------ | ----- | ----------- |
+| batch_header_hash | bytes  |       |             |
+| blob_index        | uint32 |       |             |
 
 ### RetrieveBlobReply
 
