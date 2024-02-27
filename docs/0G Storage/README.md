@@ -1,8 +1,8 @@
-# ZeroG Sorage
+# 0G Sorage
 
 ## Organization
 
-The [ZeroG Storage repo](https://github.com/zero-gravity-labs/zerog-storage-rust) is organized with two main modules, `common` and `node`, each with several submodules. `common` contains basic components needed for the `node` to run, while `node` contains key roles that compose the network.
+The [0G Storage repo](https://github.com/zero-gravity-labs/zerog-storage-rust) is organized with two main modules, `common` and `node`, each with several submodules. `common` contains basic components needed for the `node` to run, while `node` contains key roles that compose the network.
 
 ## Directory structure
 

@@ -1,6 +1,6 @@
-# Overview
+# docs
 
-1. [ZGDA](<0G DA/>)
+1. [0GDA](<0G DA/>)
    1. [Architecture](<0G DA/architecture/>)
       * [Disperser](<0G DA/architecture/disperser.md>)
       * [Batcher](<0G DA/architecture/batcher.md>)
@@ -15,8 +15,8 @@
    5. [Dependent Package](<0G DA/pkg/>)
       * [Encoding](<0G DA/pkg/encoding.md>)
       * [KZG and FFT utils](<0G DA/pkg/kzg.md>)
-   6. [Glossary](<0G DA/glossary.md>)
-2. [ZG Storage](<0G Storage/>)
+   6. [Glossary](0G%20DA/glossary.md)
+2. [0G Storage](<0G Storage/>)
    1. [Introduction](<0G Storage/introduction.md>)
    2. [Architecture](<0G Storage/architecture.md>)
       1. [Log System](<0G Storage/log-system.md>)

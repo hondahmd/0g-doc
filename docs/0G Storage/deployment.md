@@ -2,7 +2,7 @@
 
 ## Install
 
-ZeroGStorage requires Rust 1.71.0 and Go to build.
+0G Storage requires Rust 1.71.0 and Go to build.
 
 ### Install Rust
 
@@ -140,7 +140,7 @@ npx hardhat run scripts/deploy.ts --network targetnetwork
 
 6. Keep contracts addresses
 
-### Run ZeroG Storage Node
+### Run 0G Storage Node
 
 1. Update config run/config.toml as required:
 

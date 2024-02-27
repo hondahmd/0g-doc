@@ -47,7 +47,7 @@ Disperser defines the public APIs for dispersing blobs.
 
 ### BlobInfo
 
-BlobInfo contains information needed to confirm the blob against the ZGDA contracts
+BlobInfo contains information needed to confirm the blob against the 0GDA contracts
 
 <table><thead><tr><th>Field</th><th>Type</th><th width="132">Label</th><th>Description</th></tr></thead><tbody><tr><td>blob_header</td><td><a href="disperser.md#blobheader">BlobHeader</a></td><td></td><td></td></tr><tr><td>blob_verification_proof</td><td><a href="disperser.md#blobverificationproof">BlobVerificationProof</a></td><td></td><td></td></tr></tbody></table>
 
@@ -57,7 +57,7 @@ BlobInfo contains information needed to confirm the blob against the ZGDA contra
 
 ### BlobStatusReply
 
-<table><thead><tr><th width="171">Field</th><th width="157">Type</th><th width="138">Label</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><a href="disperser.md#blobstatus">BlobStatus</a></td><td></td><td>The status of the blob.</td></tr><tr><td>info</td><td><a href="disperser.md#blobinfo">BlobInfo</a></td><td></td><td>The blob info needed for clients to confirm the blob against the ZGDA contracts.</td></tr></tbody></table>
+<table><thead><tr><th width="171">Field</th><th width="157">Type</th><th width="138">Label</th><th>Description</th></tr></thead><tbody><tr><td>status</td><td><a href="disperser.md#blobstatus">BlobStatus</a></td><td></td><td>The status of the blob.</td></tr><tr><td>info</td><td><a href="disperser.md#blobinfo">BlobInfo</a></td><td></td><td>The blob info needed for clients to confirm the blob against the 0GDA contracts.</td></tr></tbody></table>
 
 ### BlobStatusRequest
 

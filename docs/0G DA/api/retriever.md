@@ -17,7 +17,7 @@
 
 | Method Name  | Request Type                            | Response Type                       | Description                                                                                                         |
 | ------------ | --------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| RetrieveBlob | [BlobRequest](retriever.md#blobrequest) | [BlobReply](retriever.md#blobreply) | This fans out request to ZGDA Nodes to retrieve the chunks and returns the reconstructed original blob in response. |
+| RetrieveBlob | [BlobRequest](retriever.md#blobrequest) | [BlobReply](retriever.md#blobreply) | This fans out request to 0GDA Nodes to retrieve the chunks and returns the reconstructed original blob in response. |
 
 ## Data Structure
 
@@ -34,7 +34,7 @@
 
 | Field | Type  | Label | Description                                                               |
 | ----- | ----- | ----- | ------------------------------------------------------------------------- |
-| data  | bytes |       | The blob retrieved and reconstructed from the ZGDA Nodes per BlobRequest. |
+| data  | bytes |       | The blob retrieved and reconstructed from the 0GDA Nodes per BlobRequest. |
 
 ## Scalar Value Types
 

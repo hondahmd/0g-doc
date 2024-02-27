@@ -2,7 +2,7 @@
 
 * [0G System](README.md)
 * [docs](docs/README.md)
-  * [ZeroG DA](<docs/0G DA/README.md>)
+  * [0GDA](<docs/0G DA/README.md>)
     * [Introduction](<docs/0G DA/introduction.md>)
     * [Architecture](<docs/0G DA/architecture/README.md>)
       * [Disperser](<docs/0G DA/architecture/disperser.md>)
@@ -19,7 +19,7 @@
       * [Encoding](<docs/0G DA/pkg/encoding.md>)
       * [KZG and FFT utils](<docs/0G DA/pkg/kzg.md>)
     * [Glossary](<docs/0G DA/glossary.md>)
-  * [ZeroG Sorage](<docs/0G Storage/README.md>)
+  * [0G Sorage](<docs/0G Storage/README.md>)
     * [Introduction](<docs/0G Storage/introduction.md>)
     * [Architecture](<docs/0G Storage/architecture.md>)
     * [Log System](<docs/0G Storage/log-system.md>)

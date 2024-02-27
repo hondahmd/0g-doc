@@ -2,11 +2,11 @@
 
 ## Overview
 
-ZeroGDA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with ZeroGDA to submit and store their data into [ZeroG Storage](<../0G Storage/>) for later retrieval.
+0GDA is a decentralized data availability (DA) service with deep consideration in security, scalability and decentralization. It is also the first DA solution with a built-in data storage layer. Users interact with 0GDA to submit and store their data into [0G Storage](<../0G Storage/>) for later retrieval.
 
 ## Integration
 
-Check out [this example](https://github.com/zero-gravity-labs/zerog-da-example-rust) for how to integrate the ZGDA into your own applications.
+Check out [this example](https://github.com/zero-gravity-labs/zerog-da-example-rust) for how to integrate the 0GDA into your own applications.
 
 For detailed public APIs, visit [gRPC API](../0G%20DA/broken-reference/) section.
 
