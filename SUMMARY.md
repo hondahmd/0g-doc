@@ -30,4 +30,5 @@
       * [Storage Pricing](<docs/0G Storage/incentive-mechanism/storage-pricing.md>)
       * [Mining Reward](<docs/0G Storage/incentive-mechanism/mining-reward.md>)
     * [Deployment](<docs/0G Storage/deployment.md>)
+* [Deployment and Integration](deployment-and-integration.md)
 * [Contributing](contributing.md)
