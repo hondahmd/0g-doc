@@ -322,12 +322,6 @@ $ make build
 $ make run
 ```
 
-
-
-### Now you are all good to go!
-
-
-
 ### 5. Benchmark
 
 To conduct integration test
@@ -363,3 +357,7 @@ Note,
 * `block-size` is the size of the total data in bytes
 * `chunk-size` is the same as the blob size in bytes of each request sent to the disperse service
 * `target-chunk-num` is the number of the chunks to define in 0GDA service. It's used to divide the blob into corresponding number of pieces. It's hard bounded by the blob size.
+
+
+
+### You are all set !
