@@ -14,6 +14,9 @@ type DisperseBlobRequest struct {
 	// The size of data must be <= 512KiB.
 	Data []byte `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
 	SecurityParams []*SecurityParams `protobuf:"bytes,2,rep,name=security_params,json=securityParams,proto3" json:"security_params,omitempty"`
+	// The number of chunks that encoded blob split into.
+	// The number will be aligned to the next power of 2 and be bounded by blob size.
+	uint32 targetChunkNum = 3;
 }
 
 type RetrieveBlobRequest struct {
