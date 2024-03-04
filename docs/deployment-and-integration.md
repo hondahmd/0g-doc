@@ -2,56 +2,15 @@
 
 0G System is composed of multiple components, each with its own functionalities. Detailed steps are provided as a guideline to deploy the whole and complete system. The guideline assumes the deployment environment is Linux/Ubuntu.
 
-### 1. Solidity Contract
+### Prerequisite
 
-The first step is to deploy the Token, Flow and Mine contracts
+0G Storage and DA services interact with on-chain contracts for blob root confirmation and PoRA mining.
 
-1. Install dependencies
+For official deployed contract addresses, visit this page.
 
-```bash
-# node >=12.18
-$ sudo apt install npm
-$ sudo npm install --global yarn
-$ sudo npm install --global hardhat
-```
+### 1. Storage Node
 
-2. Download the source code
-
-```bash
-$ git clone https://github.com/zero-gravity-labs/zerog-storage-contracts.git
-$ cd zerog-storage-contracts
-```
-
-3. Add the network config to your `hardhat.config.js`
-
-```javascript
-# example
-networks: {
-  targetNetwork: {
-    url: "******",
-    accounts: [
-      "******",
-    ],
-  },
-},
-```
-
-4. Compile the source code
-
-<pre class="language-shell"><code class="lang-shell"><strong>$ yarn
-</strong>$ yarn compile
-</code></pre>
-
-5. Deploy contract
-
-<pre class="language-bash"><code class="lang-bash"><strong>$ npx hardhat run scripts/deploy.ts --network targetnetwork
-</strong></code></pre>
-
-6. Note down the deployed addresses
-
-### 2. Storage Node
-
-Next step is to deploy the storage node. As a distributed storage system, the system can have multiple instances.
+First step is to deploy the storage node. As a distributed storage system, the system can have multiple instances.
 
 1. Install dependencies
 
@@ -106,7 +65,7 @@ rpc_listen_address
 # peer nodes, modify to your own ips
 network_boot_nodes
 
-# flow contract address which was deployed in the first stage
+# flow contract address
 log_contract_address
 
 # mine contract address
@@ -132,11 +91,11 @@ $ cd run
 $ ../target/release/zgs_node --config config.toml
 ```
 
-### 3. Storage KV
+### 2. Storage KV
 
-Third step is to launch the kv service.
+Second step is to launch the kv service.
 
-1. Follow the same steps to install dependencies and rust in [Stage 2](deployment-and-integration.md#id-2.-storage-node)
+1. Follow the same steps to install dependencies and rust in [Stage ](deployment-and-integration.md#id-2.-storage-node)1
 2. Download the source code
 
 ```bash
@@ -163,7 +122,7 @@ zgs_node_urls = "http://ip1:port1,http://ip2:port2,..."
 # layer one blockchain rpc endpoint
 blockchain_rpc_endpoint
 
-# flow contract which was deployed in Stage 1
+# flow contract address
 log_contract_address
 
 # block number to start the sync, better to align with the config in storage service
@@ -179,11 +138,11 @@ $ cd run
 $ ../target/release/zgs_kv --config config.toml
 ```
 
-### 4. Data Availability Service
+### 3. Data Availability Service
 
-The fourth step is to start the 0GDA service which is the primary service to send requests to.
+Next step is to start the 0GDA service which is the primary service to send requests to.
 
-1. Follow the same steps to install dependencies, go and rust in [Stage 2](deployment-and-integration.md#id-2.-storage-node)
+1. Follow the same steps to install dependencies, go and rust in [Stage 1](deployment-and-integration.md#id-1.-storage-node)
 2. Download the source code
 
 ```bash
@@ -248,7 +207,7 @@ $ git clone git@github.com:zero-gravity-labs/zerog-data-avail.git
 # endpoint of kv service
 --batcher.storage.kv-url
 
-# flow contract which was deployed in Stage 1
+# flow contract address
 --batcher.storage.flow-contract
 
 # timeout for encoding, set based on the instance capacitgy
@@ -305,7 +264,7 @@ $ make run_server
 # endpoint of kv service
 --retriever.storage.kv-url
 
-# flow contract which was deployed in Stage 1
+# flow contract addres
 --retriever.storage.flow-contract
 ```
 
@@ -322,7 +281,7 @@ $ make build
 $ make run
 ```
 
-### 5. Benchmark
+### 4. Benchmark
 
 To conduct integration test
 
@@ -353,7 +312,7 @@ $ cargo run -- zgda-disperse --rps <int> --max-out-standing <int> --url <endpoin
 Note,
 
 * `rps` and `max-out-standing` are set to control the speed of the requests
-* `url` is the endpoint of the disperse service in [Stage 4](deployment-and-integration.md#disperse-service)
+* `url` is the endpoint of the disperse service in [Stage 3](deployment-and-integration.md#disperse-service)
 * `block-size` is the size of the total data in bytes
 * `chunk-size` is the same as the blob size in bytes of each request sent to the disperse service
 * `target-chunk-num` is the number of the chunks to define in 0GDA service. It's used to divide the blob into corresponding number of pieces. It's hard bounded by the blob size.
