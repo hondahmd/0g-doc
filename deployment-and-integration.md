@@ -6,7 +6,7 @@
 
 0G Storage and DA services interact with on-chain contracts for blob root confirmation and PoRA mining.
 
-For official deployed contract addresses, visit this page.
+For official deployed contract addresses, visit [this page](docs/contract-addresses.md).
 
 ### 1. Storage Node
 

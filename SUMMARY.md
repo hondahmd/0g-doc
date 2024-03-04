@@ -29,6 +29,6 @@
       * [Proof of Random Access](<docs/0G Storage/incentive-mechanism/proof-of-random-access.md>)
       * [Storage Pricing](<docs/0G Storage/incentive-mechanism/storage-pricing.md>)
       * [Mining Reward](<docs/0G Storage/incentive-mechanism/mining-reward.md>)
-  * [Deployment and Integration](docs/deployment-and-integration.md)
-  * [Contracts](docs/contracts.md)
+  * [Deployment and Integration](deployment-and-integration.md)
+  * [Contract Addresses](docs/contract-addresses.md)
 * [Contributing](contributing.md)
