@@ -26,4 +26,6 @@
       1. [Proof of Random Access (PoRA)](<0G Storage/incentive-mechanism/proof-of-random-access.md>)
       2. [Storage Pricing](<0G Storage/incentive-mechanism/storage-pricing.md>)
       3. [Mining Reward](<0G Storage/incentive-mechanism/mining-reward.md>)
-   4. [Deployment](broken-reference)
+   4. [Deployment](broken-reference/)
+3. [Deployment and Integration](../deployment-and-integration.md)
+4. [Contract Addresses](contract-addresses.md)

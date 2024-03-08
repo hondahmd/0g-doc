@@ -44,10 +44,10 @@ Alternatively, you could also manually copy specific versoin binaries (conflux o
 
 For testing, it's also dependent on the following repos:
 
-* [0G Storage Contract](https://github.com/zero-gravity-labs/zerog-storage-contracts): It essentially provides two abi interfaces for 0G Storage Node to interact with the on-chain contracts.
+* [0G Storage Contract](https://github.com/0glabs/0g-storage-contracts): It essentially provides two abi interfaces for 0G Storage Node to interact with the on-chain contracts.
   * ZgsFlow: It contains apis to submit chunk data.
   * PoraMine: It contains apis to submit PoRA answers.
-* [0G Storage Client](https://github.com/zero-gravity-labs/zerog-storage-client): It is used to interact with certain 0G Storage Nodes to upload/download files.
+* [0G Storage Client](https://github.com/0glabs/0g-storage-client): It is used to interact with certain 0G Storage Nodes to upload/download files.
 
 ### Run Tests
 
@@ -69,6 +69,3 @@ python sync_test.py
    * Traceback: `node.wait_for_rpc_connection()`
    * Solution: unset the `http_proxy` and `https_proxy` environment variables if configured.
 
-## Contributing
-
-To make contributions to the project, please follow the guidelines [here](../0G%20Storage/contributing.md).

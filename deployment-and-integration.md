@@ -40,13 +40,13 @@ $ export PATH=$PATH:/usr/local/go/bin
 4. Then download the source code
 
 ```bash
-$ git clone git@github.com:zero-gravity-labs/zerog-storage-rust.git
+$ git clone git@github.com:0glabs/0g-storage-node.git
 ```
 
 5. Build the source code
 
 ```bash
-$ cd zerog-storage-rust
+$ cd 0g-storage-node
 $ git submodule update --init
 
 # Build in release mode
@@ -99,12 +99,12 @@ Second step is to launch the kv service.
 2. Download the source code
 
 ```bash
-$ git@github.com:zero-gravity-labs/zerog-storage-kv.git
+$ git clone git@github.com:0glabs/0g-storage-kv.git
 ```
 
 3. Build the source code
 
-<pre class="language-bash"><code class="lang-bash">$ cd zerog-storage-kv
+<pre class="language-bash"><code class="lang-bash">$ cd 0g-storage-kv
 <strong>$ git submodule update --init
 </strong>
 # Build in release mode
@@ -146,12 +146,12 @@ Next step is to start the 0GDA service which is the primary service to send requ
 2. Download the source code
 
 ```bash
-$ git clone git@github.com:zero-gravity-labs/zerog-data-avail.git
+$ git clone git@github.com:0glabs/0g-data-avail.git
 ```
 
 #### Disperse Service
 
-3. Update the `Makefile` under the `zerog-data-avail/disperser` folder
+3. Update the `Makefile` under the `0g-data-avail/disperser` folder
 
 * For encoder
 
@@ -232,7 +232,7 @@ $ git clone git@github.com:zero-gravity-labs/zerog-data-avail.git
 4. Build the source code
 
 ```bash
-$ cd zerog-data-avail/disperser
+$ cd 0g-data-avail/disperser
 $ make build
 ```
 
@@ -251,7 +251,7 @@ $ make run_server
 
 #### Retrieve Service
 
-6. Update the `Makefile` under `zerog-data-avail/retriever` folder
+6. Update the `Makefile` under `0g-data-avail/retriever` folder
 
 ```makefile
 # grpc port to listen on requests
@@ -271,7 +271,7 @@ $ make run_server
 7. Build the source code
 
 ```bash
-$ cd zerog-data-avail/retriever
+$ cd 0g-data-avail/retriever
 $ make build
 ```
 
@@ -294,7 +294,7 @@ $ sudo apt-get install protobuf-compiler
 2. Download the source code
 
 ```bash
-$ git clone git@github.com:zero-gravity-labs/zerog-da-example-rust.git
+$ git clone git@github.com:0glabs/0g-da-example-rust.git
 ```
 
 3. Build the source code
@@ -316,7 +316,5 @@ Note,
 * `block-size` is the size of the total data in bytes
 * `chunk-size` is the same as the blob size in bytes of each request sent to the disperse service
 * `target-chunk-num` is the number of the chunks to define in 0GDA service. It's used to divide the blob into corresponding number of pieces. It's hard bounded by the blob size.
-
-
 
 ### You are all set !
