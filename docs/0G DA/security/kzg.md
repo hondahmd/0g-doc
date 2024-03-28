@@ -13,8 +13,6 @@ We will also highlight the additional constraints on the Encoding interface whic
 
 As described in the [Encoding Module Specification](encoding.md), given a blob of data, we convert the blob to a polynomial $$p(X) = \sum_{i=0}^{m-1} c_iX^i$$ by simply slicing the data into a string of symbols, and interpreting this list of symbols as the tuple $$(c_i)_{i=0}^{m-1}$$.
 
-In the case of the KZG-FFT encoder, the polynomial lives on the field associated with the BN-254 elliptic curve, which as order \[TODO: fill in order].
-
 Given this polynomial representation, the KZG commitment can be calculated as in [KZG polynomial commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html).
 
 ## Polynomial Evaluation with the FFT
