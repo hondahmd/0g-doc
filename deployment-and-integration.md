@@ -14,9 +14,16 @@ First step is to deploy the storage node. As a distributed storage system, the s
 
 1. Install dependencies
 
+* For Linux
+
+<pre><code><strong>$ sudo apt-get update
+</strong>$ sudo apt-get install clang cmake build-essential
+</code></pre>
+
+* For Mac
+
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install clang cmake build-essential
+$ brew install llvm cmake
 ```
 
 2. Install rustup
@@ -27,6 +34,8 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 3. Install Go
 
+* For Linux
+
 <pre class="language-bash"><code class="lang-bash"><strong># Download the Go installer
 </strong>$ wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
 
@@ -36,6 +45,11 @@ $ sudo rm -rf /usr/local/go &#x26;&#x26; sudo tar -C /usr/local -xzf go1.22.0.li
 # Add /usr/local/go/bin to the PATH environment variable by adding the following line to your ~/.profile.
 $ export PATH=$PATH:/usr/local/go/bin
 </code></pre>
+
+* For Mac
+
+Download the Go installer from [https://go.dev/dl/go1.22.0.darwin-amd64.pkg](https://go.dev/dl/go1.19.3.darwin-amd64.pkg).\
+Open the package file you downloaded and follow the prompts to install Go.
 
 4. Then download the source code
 
