@@ -16,20 +16,20 @@ First step is to deploy the storage node. As a distributed storage system, the s
 
 * For Linux
 
-<pre><code><strong>$ sudo apt-get update
-</strong>$ sudo apt-get install clang cmake build-essential
+<pre><code><strong>sudo apt-get update
+</strong>sudo apt-get install clang cmake build-essential
 </code></pre>
 
 * For Mac
 
 ```bash
-$ brew install llvm cmake
+brew install llvm cmake
 ```
 
 2. Install rustup
 
 ```bash
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 3. Install Go
@@ -37,13 +37,13 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 * For Linux
 
 <pre class="language-bash"><code class="lang-bash"><strong># Download the Go installer
-</strong>$ wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+</strong>wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
 
 # Extract the archive
-$ sudo rm -rf /usr/local/go &#x26;&#x26; sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go &#x26;&#x26; sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 
 # Add /usr/local/go/bin to the PATH environment variable by adding the following line to your ~/.profile.
-$ export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
 </code></pre>
 
 * For Mac
@@ -54,17 +54,17 @@ Open the package file you downloaded and follow the prompts to install Go.
 4. Then download the source code
 
 ```bash
-$ git clone git@github.com:0glabs/0g-storage-node.git
+git clone https://github.com/0glabs/0g-storage-node.git
 ```
 
 5. Build the source code
 
 ```bash
-$ cd 0g-storage-node
-$ git submodule update --init
+cd 0g-storage-node
+git submodule update --init
 
 # Build in release mode
-$ cargo build --release
+cargo build --release
 ```
 
 6. Update the `run/config.toml`
@@ -99,10 +99,10 @@ network_dir
 7. Run the storage service
 
 ```shell
-$ cd run
+cd run
 
 # consider using tmux in order to run in background
-$ ../target/release/zgs_node --config config.toml
+../target/release/zgs_node --config config.toml
 ```
 
 Note: The recommended system configuration of a storage node service is 4 CPU cores, 16GB memory, preferably with network bandwidth of 12 Gbps (`m7i.xlarge` instance type if you want to deploy on AWS). Also make sure you set enough hard drive / SSD size to store user data.
@@ -115,16 +115,16 @@ Second step is to launch the kv service.
 2. Download the source code
 
 ```bash
-$ git clone git@github.com:0glabs/0g-storage-kv.git
+git clone https://github.com/0glabs/0g-storage-kv.git
 ```
 
 3. Build the source code
 
-<pre class="language-bash"><code class="lang-bash">$ cd 0g-storage-kv
-<strong>$ git submodule update --init
+<pre class="language-bash"><code class="lang-bash">cd 0g-storage-kv
+<strong>git submodule update --init
 </strong>
 # Build in release mode
-$ cargo build --release
+cargo build --release
 </code></pre>
 
 4. Copy the `config_example.toml` to `config.toml` and update the parameters
@@ -148,10 +148,10 @@ log_sync_start_block_number
 5. Run the kv service
 
 ```bash
-$ cd run
+cd run
 
 # consider using tmux in order to run in background
-$ ../target/release/zgs_kv --config config.toml
+../target/release/zgs_kv --config config.toml
 ```
 
 Note: The recommended system configuration is the same as the storage node.
@@ -164,7 +164,7 @@ Next step is to start the 0GDA service which is the primary service to send requ
 2. Download the source code
 
 ```bash
-$ git clone git@github.com:0glabs/0g-data-avail.git
+git clone https://github.com/0glabs/0g-data-avail.git
 ```
 
 #### Disperse Service
@@ -250,21 +250,21 @@ $ git clone git@github.com:0glabs/0g-data-avail.git
 4. Build the source code
 
 ```bash
-$ cd 0g-data-avail/disperser
-$ make build
+cd 0g-data-avail/disperser
+make build
 ```
 
 5. Run encoder, batcher and disperser
 
 ```bash
 # encoder
-$ make run_encoder
+make run_encoder
 
 # batcher
-$ make run_batcher
+make run_batcher
 
 # disperser
-$ make run_server
+make run_server
 ```
 
 #### Retrieve Service
@@ -289,14 +289,14 @@ $ make run_server
 7. Build the source code
 
 ```bash
-$ cd 0g-data-avail/retriever
-$ make build
+cd 0g-data-avail/retriever
+make build
 ```
 
 8. Run retriever
 
 ```bash
-$ make run
+make run
 ```
 
 Note: You can deploy all these services on one instance. The bottleneck is at the encoder which requires much cpu computation. As a result, the number of CPU cores is linearly related to the performance (Mbps). It is recommended to have at least 32 CPU cores for your da services. (`c6i.8xlarge` instance type if you want to deploy on AWS).
@@ -310,25 +310,25 @@ To conduct integration test
 1. Install extra dependency
 
 ```bash
-$ sudo apt-get install protobuf-compiler
+sudo apt-get install protobuf-compiler
 ```
 
 2. Download the source code
 
 ```bash
-$ git clone git@github.com:0glabs/0g-da-example-rust.git
+git clone https://github.com/0glabs/0g-da-example-rust.git
 ```
 
 3. Build the source code
 
 ```bash
-$ cargo build
+cargo build
 ```
 
 4. Run the test
 
 ```bash
-$ cargo run -- zgda-disperse --rps <int> --max-out-standing <int> --url <endpoint> --block-size <int> --chunk-size <int> --target-chunk-num <int>
+cargo run -- zgda-disperse --rps <int> --max-out-standing <int> --url <endpoint> --block-size <int> --chunk-size <int> --target-chunk-num <int>
 ```
 
 Note,
