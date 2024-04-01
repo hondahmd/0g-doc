@@ -1,6 +1,6 @@
 # Deployment and Integration
 
-0G System is composed of multiple components, each with its own functionalities. Detailed steps are provided as a guideline to deploy the whole and complete system. The guideline assumes the deployment environment is Linux/Ubuntu.
+0G System is composed of multiple components, each with its own functionalities. Detailed steps are provided as a guideline to deploy the whole and complete system.
 
 ### Prerequisite
 
