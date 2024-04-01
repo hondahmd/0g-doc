@@ -105,6 +105,8 @@ $ cd run
 $ ../target/release/zgs_node --config config.toml
 ```
 
+Note: The recommended system configuration of a storage node service is 4 CPU cores, 16GB memory, preferably with network bandwidth of 12 Gbps (`m7i.xlarge` instance type if you want to deploy on AWS). Also make sure you set enough hard drive / SSD size to store user data.
+
 ### 2. Storage KV
 
 Second step is to launch the kv service.
@@ -151,6 +153,8 @@ $ cd run
 # consider using tmux in order to run in background
 $ ../target/release/zgs_kv --config config.toml
 ```
+
+Note: The recommended system configuration is the same as the storage node.
 
 ### 3. Data Availability Service
 
@@ -294,6 +298,10 @@ $ make build
 ```bash
 $ make run
 ```
+
+Note: You can deploy all these services on one instance. The bottleneck is at the encoder which requires much cpu computation. As a result, the number of CPU cores is linearly related to the performance (Mbps). It is recommended to have at least 32 CPU cores for your da services. (`c6i.8xlarge` instance type if you want to deploy on AWS).
+
+Also deploy storage node, kv and da services in the same region can increase the throughput. It 's experimented that on AWS, with `m7i.xlarge` storage instance and `c6i.12xlarge` da instance, the throughput can reach 15 Mbps.
 
 ### 4. Benchmark
 
