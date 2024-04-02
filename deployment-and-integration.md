@@ -2,13 +2,22 @@
 
 0G System is composed of multiple components, each with its own functionalities. Detailed steps are provided as a guideline to deploy the whole and complete system.
 
+* [Prerequisite](deployment-and-integration.md#prerequisite)
+* [Storage Node](deployment-and-integration.md#id-1.-storage-node)
+* [Storage KV](deployment-and-integration.md#storage-kv)
+* [Data Availability Service](deployment-and-integration.md#data-availability-service)
+  * [Disperse Service](deployment-and-integration.md#disperse-service)
+  * [Retrieve Service](deployment-and-integration.md#retrieve-service)
+* [Storage Node CLI](deployment-and-integration.md#storage-node-cli)
+* [Integration Test](deployment-and-integration.md#integration-test)
+
 ### Prerequisite
 
 0G Storage and DA services interact with on-chain contracts for blob root confirmation and PoRA mining.
 
 For official deployed contract addresses, visit [this page](docs/contract-addresses.md).
 
-### 1. Storage Node
+### Storage Node
 
 First step is to deploy the storage node. As a distributed storage system, the system can have multiple instances.
 
@@ -107,7 +116,7 @@ cd run
 
 Note: The recommended system configuration of a storage node service is 4 CPU cores, 16GB memory, preferably with network bandwidth of 12 Gbps (`m7i.xlarge` instance type if you want to deploy on AWS). Also make sure you set enough hard drive / SSD size to store user data.
 
-### 2. Storage KV
+### Storage KV
 
 Second step is to launch the kv service.
 
@@ -156,7 +165,7 @@ cd run
 
 Note: The recommended system configuration is the same as the storage node.
 
-### 3. Data Availability Service
+### Data Availability Service
 
 Next step is to start the 0GDA service which is the primary service to send requests to.
 
@@ -267,6 +276,16 @@ make run_batcher
 make run_server
 ```
 
+Updated: Now you can build and run the server with one combined service.
+
+```bash
+make run_combined
+```
+
+Note the configurations for the combined server is the same as the separated ones except that the prefix of certain parameters is set to `combined-server`. Please refer to the [Makefile](https://github.com/0glabs/0g-data-avail/blob/main/disperser/Makefile) for detailed configurations.
+
+We now also provide an option to use memory as metadata db instead of aws dynamodb. Set the `--combined-server.use-memory-db` to appoint which db you want to use.
+
 #### Retrieve Service
 
 6. Update the `Makefile` under `0g-data-avail/retriever` folder
@@ -303,9 +322,35 @@ Note: You can deploy all these services on one instance. The bottleneck is at th
 
 Also deploy storage node, kv and da services in the same region can increase the throughput. It 's experimented that on AWS, with `m7i.xlarge` storage instance and `c6i.12xlarge` da instance, the throughput can reach 15 Mbps.
 
-### 4. Benchmark
+### Storage Node CLI
 
-To conduct integration test
+We provided a [client tool](https://github.com/0glabs/0g-storage-client) if you want to directly interact with the storage node.
+
+1. Download the source code
+
+```bash
+git clone https://github.com/0glabs/0g-storage-client.git
+```
+
+2. Build the source code
+
+```bash
+cd 0g-storage-client
+go build
+```
+
+3. Run the file upload/download commands
+
+```bash
+# file upload
+./0g-storage-client upload --url <blockchain_rpc_endpoint> --contract <0g-storage_contract_address> --key <private_key> --node <storage_node_rpc_endpoint> --file <file_path>
+# file download
+./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path>
+```
+
+### Integration Test
+
+If you want to conduct integration tests on the entire DA service, you could use the [benchmark tool](https://github.com/0glabs/0g-da-example-rust) that we provided.
 
 1. Install extra dependency
 
@@ -322,6 +367,7 @@ git clone https://github.com/0glabs/0g-da-example-rust.git
 3. Build the source code
 
 ```bash
+cd 0g-da-example-rust
 cargo build
 ```
 
