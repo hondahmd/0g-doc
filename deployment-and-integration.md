@@ -348,6 +348,10 @@ go build
 ./0g-storage-client download --node <storage_node_rpc_endpoint> --root <file_root_hash> --file <output_file_path>
 ```
 
+Check [Contract Addresses](docs/contract-addresses.md) to get the contract address.&#x20;
+
+For the storage node rpc endpoint, you could use the team deployed [https://rpc-storage-testnet.0g.ai](https://rpc-storage-testnet.0g.ai) or you could deploy yourself by following the above instructions.
+
 ### Integration Test
 
 If you want to conduct integration tests on the entire DA service, you could use the [benchmark tool](https://github.com/0glabs/0g-da-example-rust) that we provided.
