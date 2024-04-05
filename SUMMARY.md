@@ -1,7 +1,7 @@
 # Table of contents
 
 * [0G System](README.md)
-* [docs](docs/README.md)
+* [Learn](docs/README.md)
   * [0G DA](<docs/0G DA/README.md>)
     * [Introduction](<docs/0G DA/introduction.md>)
     * [Architecture](<docs/0G DA/architecture/README.md>)
@@ -31,6 +31,8 @@
       * [Mining Reward](<docs/0G Storage/incentive-mechanism/mining-reward.md>)
     * [RPC API](docs/0g-storage/rpc-api/README.md)
       * [Node API](docs/0g-storage/rpc-api/node-api.md)
-  * [Deployment and Integration](deployment-and-integration.md)
   * [Contract Addresses](docs/contract-addresses.md)
+* [Run a node](run-a-node/README.md)
+  * [Validator Node](run-a-node/validator-node.md)
+  * [Storage Node And DA Services](run-a-node/deployment-and-integration.md)
 * [Contributing](contributing.md)
