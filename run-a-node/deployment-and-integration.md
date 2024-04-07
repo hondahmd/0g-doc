@@ -85,8 +85,8 @@ network_libp2p_port
 # rpc endpoint
 rpc_listen_address
 
-# peer nodes, modify to your own ips
-network_boot_nodes
+# peer nodes, we provided two nodes, you can also modify to your own ips
+network_boot_nodes = ["/ip4/54.219.26.22/udp/1234/p2p/16Uiu2HAmPxGNWu9eVAQPJww79J32pTJLKGcpjRMb4Qb8xxKkyuG1","/ip4/52.52.127.117/udp/1234/p2p/16Uiu2HAm93Hd5azfhkGBbkx1zero3nYHvfjQYM2NtiW4R3r5bE2g"]
 
 # flow contract address
 log_contract_address

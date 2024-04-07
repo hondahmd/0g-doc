@@ -89,6 +89,8 @@ Start the node and sync up to the latest block height. Note that the first time 
 evmosd start
 ```
 
+Make sure you've synced your node to the latest block height before running the following steps.
+
 ### Create Validator
 
 You could either create a new account or import from an existing key. To create a new account:
