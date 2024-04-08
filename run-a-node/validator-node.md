@@ -130,7 +130,7 @@ Check that it is in the validator set:
 evmosd q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
 ```
 
-Note that only top 150 staked validators will be selected as active validators.
+Note that only top 100 staked validators will be selected as active validators.
 
 ### Upgrading Your Node
 
