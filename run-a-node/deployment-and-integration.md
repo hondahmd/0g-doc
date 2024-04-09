@@ -105,11 +105,12 @@ db_dir
 network_dir
 
 # set these two fields if you want to become a miner
-# your miner id, can be arbitrary string
-# better to set a unique enough id, otherwise it will raise error when you send reward tx
+# your miner id, can be arbitrary hex string with 64 length
+# do not include leading 0x
+# need to set a unique id, otherwise it will raise error when you send reward tx
 miner_id
 # your private key with 64 length
-# do not include 0x
+# do not include leading 0x
 # do not omit leading 0
 miner_key
 ```
@@ -129,7 +130,7 @@ Note: The recommended system configuration of a storage node service is 4 CPU co
 
 Second step is to launch the kv service.
 
-1. Follow the same steps to install dependencies and rust in [Stage ](deployment-and-integration.md#id-2.-storage-node)1
+1. Follow the same steps to install dependencies and rust in [Stage 1](deployment-and-integration.md#id-2.-storage-node)
 2. Download the source code
 
 ```bash
