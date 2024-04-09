@@ -103,6 +103,15 @@ log_sync_start_block_number
 # location for db, network logs
 db_dir
 network_dir
+
+# set these two fields if you want to become a miner
+# your miner id, can be arbitrary string
+# better to set a unique enough id, otherwise it will raise error when you send reward tx
+miner_id
+# your private key with 64 length
+# do not include 0x
+# do not omit leading 0
+miner_key
 ```
 
 7. Run the storage service
