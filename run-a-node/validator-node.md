@@ -132,6 +132,12 @@ evmosd q staking validators -o json --limit=1000 | jq '.validators[] | select(.s
 
 Note that only top 100 staked validators will be selected as active validators.
 
+By any chance your validator is put in jail, use this command to unjail it
+
+```bash
+evmosd tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999aevmos -y
+```
+
 ### Upgrading Your Node
 
 Note these instructions are for full nodes that have ran on previous versions of and would like to upgrade to the latest testnet version.
