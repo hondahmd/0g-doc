@@ -2,6 +2,15 @@
 
 This document outlines the steps to deploy your own validator node.
 
+### Hardware Requirement
+
+```
+- Memory: 8 GB RAM
+- CPU: 4 cores
+- Disk: 500 GB NVME SSD
+- Bandwidth: 100mbps Gbps for Download / Upload
+```
+
 ### Server Timezone Configuration
 
 Make sure your server timezone configuration is UTC. Check your current timezone by running `timedatectl`
@@ -130,7 +139,7 @@ Check that it is in the validator set:
 evmosd q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
 ```
 
-Note that only top 100 staked validators will be selected as active validators.
+Note that only top 500 staked validators will be selected as active validators.
 
 By any chance your validator is put in jail, use this command to unjail it
 
@@ -160,3 +169,4 @@ Your node is now in a pristine state while keeping the original `priv_validator.
 ```bash
 evmosd start
 ```
+

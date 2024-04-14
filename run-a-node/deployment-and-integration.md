@@ -19,6 +19,17 @@ For official deployed contract addresses, visit [this page](../docs/contract-add
 
 ### Storage Node
 
+#### Hardware Requirement
+
+```
+- Memory: 16 GB RAM
+- CPU: 4 cores
+- Disk: 500GB / 1T NVME SSD
+- Bandwidth: 500 Mbps for Download / Upload
+```
+
+#### Deployment Steps
+
 First step is to deploy the storage node. As a distributed storage system, the system can have multiple instances.
 
 1. Install dependencies
@@ -123,8 +134,6 @@ cd run
 # consider using tmux in order to run in background
 ../target/release/zgs_node --config config.toml
 ```
-
-Note: The recommended system configuration of a storage node service is 4 CPU cores, 16GB memory, preferably with network bandwidth of 12 Gbps (`m7i.xlarge` instance type if you want to deploy on AWS). Also make sure you set enough hard drive / SSD size to store user data.
 
 ### Storage KV
 
