@@ -6,4 +6,4 @@ Given a data storage request $$\mathsf{SR}$$ with specific amount of endowment $
 
 $$\mathsf{SR}_{unit\_price} = {\mathsf{SR}_{endowment} \over \mathsf{SR}_{data\_size}}$$
 
-This unit price $$\mathsf{SR}_{unit}$$ price must exceed a globally specified lower bound to be added to the log, otherwise the request will be pending until when the lower bound decreased below $$\mathsf{SR}_{unit}$$ price (in the meanwhile miners will most likely not store these unpaid data). Users are free to set a higher unit price $$\mathsf{SR}_{unit\_price}$$, which would motivate more storage nodes mining on that data entry and hence lead to better data availability.
+This unit price $$\mathsf{SR}_{unit}$$ price must exceed a globally specified lower bound to be added to the log, otherwise the request will be pending until when the lower bound decreased below $$\mathsf{SR}_{unit\_price}$$ (in the meanwhile miners will most likely not store these unpaid data). Users are free to set a higher unit price $$\mathsf{SR}_{unit\_price}$$, which would motivate more storage nodes mining on that data entry and hence lead to better data availability.
