@@ -8,7 +8,7 @@ This document outlines the steps to deploy your own validator node.
 - Memory: 8 GB RAM
 - CPU: 4 cores
 - Disk: 500 GB NVME SSD
-- Bandwidth: 100 Mbps for Download / Upload
+- Bandwidth: 100 MBps for Download / Upload
 ```
 
 ### Server Timezone Configuration
