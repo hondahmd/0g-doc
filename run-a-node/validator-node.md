@@ -40,7 +40,7 @@ We need to initialize the node to create all the necessary validator and node co
 
 Note: The validator name can only contain ASCII characters.
 
-By default, the `init` command creates config and data folder under `~/.0gchaind`(i.e `$HOME`). In the config directory, the most important files for configuration are `app.toml` and `config.toml`.
+By default, the `init` command creates config and data folder under `~/.0gchain`(i.e `$HOME`). In the config directory, the most important files for configuration are `app.toml` and `config.toml`.
 
 > Note, you could specify `--home` to overwrite the default work directory.
 
@@ -48,11 +48,11 @@ By default, the `init` command creates config and data folder under `~/.0gchaind
 
 #### Copy the Genesis File
 
-Check the `genesis.json` file from [this link](https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json) and copy it over to the config directory: `$HOME/.0gchaind/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
+Check the `genesis.json` file from [this link](https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json) and copy it over to the config directory: `$HOME/.0gchain/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
 
 ```bash
 sudo apt install -y unzip wget
-wget -P ~/.0gchaind/config https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json
+wget -P ~/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json
 ```
 
 Then verify the correctness of the genesis configuration file:
@@ -63,7 +63,7 @@ Then verify the correctness of the genesis configuration file:
 
 #### Add Seed Nodes
 
-Your node needs to know how to find [peers](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#peers). You’ll need to add healthy [seed nodes](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#seed) to `$HOME/.0gchaind/config/config.toml`.
+Your node needs to know how to find [peers](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#peers). You’ll need to add healthy [seed nodes](https://docs.tendermint.com/v0.34/tendermint-core/using-tendermint.html#seed) to `$HOME/.0gchain/config/config.toml`.
 
 The format of the `config.toml` file is as follows:
 
@@ -87,7 +87,7 @@ We provide four seed nodes below.
 
 #### Add Persistent Peers
 
-You can set the `persistent_peers` field in `$HOME/.0gchaind/config/config.toml` to specify peers that your node will maintain persistent connections with.
+You can set the `persistent_peers` field in `$HOME/.0gchain/config/config.toml` to specify peers that your node will maintain persistent connections with.
 
 ## Start Testnet
 
@@ -104,7 +104,7 @@ Make sure you've synced your node to the latest block height before running the 
 You could either create a new account or import from an existing key. To create a new account:
 
 ```bash
-0gchaind keys add <key_name>
+0gchaind keys add <key_name> --eth
 ```
 
 Here if you want to get the public address which starts with `0x`, you could first run the following command to get your key’s private key.
@@ -157,8 +157,8 @@ Note: If the version you are upgrading to is not breaking from the previous one,
 First, remove the outdated files and reset the data.
 
 ```bash
-rm $HOME/.0gchaind/config/addrbook.json $HOME/.0gchaind/config/genesis.json
-0gchaind tendermint unsafe-reset-all --home $HOME/.0gchaind
+rm $HOME/.0gchain/config/addrbook.json $HOME/.0gchain/config/genesis.json
+0gchaind tendermint unsafe-reset-all --home $HOME/.0gchain
 ```
 
 Your node is now in a pristine state while keeping the original `priv_validator.json` and `config.toml`. If you had any sentry nodes or full nodes setup before, your node will still try to connect to them, but may fail if they haven’t also been upgraded.
