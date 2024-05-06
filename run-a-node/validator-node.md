@@ -48,11 +48,11 @@ By default, the `init` command creates config and data folder under `~/.0gchaind
 
 #### Copy the Genesis File
 
-Check the `genesis.json` file from this link and copy it over to the config directory: `$HOME/.0gchaind/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
+Check the `genesis.json` file from [this link](https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json) and copy it over to the config directory: `$HOME/.0gchaind/config/genesis.json`. This is a genesis file with the chain-id and genesis accounts balances.
 
 ```bash
 sudo apt install -y unzip wget
-wget -P ~/.0gchaind/config <https://github.com/0glabs/0g-chaind/releases/download/v1.0.0-testnet/genesis.json>
+wget -P ~/.0gchaind/config https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json
 ```
 
 Then verify the correctness of the genesis configuration file:
@@ -82,7 +82,7 @@ seeds = "<node-id>@<ip>:<p2p port>"
 We provide four seed nodes below.
 
 ```toml
-8774f357aee2149081dcd555d39db7b07f4036e7@54.215.66.139:26656,d0d19c2e7af6ca80fd6a85e7a2e1dc5d7171e0b0@54.183.156.240:26656,0f932cc332d722bee52fc4a9a5102a22ea542a92@54.183.249.42:26656,b5ee43046886bb067533785e9c3ae2663adf6765@54.176.89.24:26656
+80afd077ba051de6a83c57cb85d78e8f3aa28e3a@54.241.167.190:26656,fd72f8832cfc78fa12e26f538c0f45c47505bf0a@54.176.175.48:26656,6bda685fe5c4c1b32b9fa73f622aaa7da71bbb81@54.193.250.204:26656,1c8d8f92870ab7c6b1ee31c44e762a5939e6637d@54.215.187.94:26656
 ```
 
 #### Add Persistent Peers
