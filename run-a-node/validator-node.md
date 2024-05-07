@@ -5,7 +5,7 @@ This document outlines the steps to deploy your own validator node.
 ### Hardware Requirement
 
 ```
-- Memory: 64-128 GB
+- Memory: 64 GB
 - CPU: 8 cores
 - Disk: 1 TB NVME SSD
 - Bandwidth: 100 MBps for Download / Upload
