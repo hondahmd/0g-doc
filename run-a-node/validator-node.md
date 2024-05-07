@@ -118,18 +118,18 @@ Then import the returned private key to a wallet (Metamask for example) to get t
 As a next step, you must acquire some testnet tokens either by wallet transfer or requesting on the [faucet](https://faucet.0g.ai/) before submitting your validator account address.
 
 ```bash
-0gchaind tx staking create-validator \\
-  --amount=10000000000ua0gi \\
-  --pubkey=$(0gchaind tendermint show-validator) \\
-  --moniker="<your_validator_name>" \\
-  --chain-id=zgtendermint_16600-1 \\
-  --commission-rate="0.10" \\
-  --commission-max-rate="0.20" \\
-  --commission-max-change-rate="0.01" \\
-  --min-self-delegation="1000000" \\
-  --gas="5000000" \\
-  --gas-prices="50000000000neuron" \\
-  --from=<key_name>
+0gchaind tx staking create-validator \
+  --amount=<staking_amount>ua0gi \
+  --pubkey=$(0gchaind tendermint show-validator) \
+  --moniker="<your_validator_name>" \
+  --chain-id=zgtendermint_16600-1 \
+  --commission-rate="0.10" \
+  --commission-max-rate="0.20" \
+  --commission-max-change-rate="0.01" \
+  --min-self-delegation="1" \
+  --from=<key_name> \
+  --gas=auto \
+  --gas-adjustment=1.4
 ```
 
 Check that it is in the validator set:
