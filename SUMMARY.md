@@ -34,5 +34,5 @@
   * [Contract Addresses](docs/contract-addresses.md)
 * [Run a node](run-a-node/README.md)
   * [Validator Node](run-a-node/validator-node.md)
-  * [Storage Node And DA Services](run-a-node/deployment-and-integration.md)
+  * [Storage Node And DA Services](run-a-node/storage-node-and-da-services.md)
 * [Contributing](contributing.md)

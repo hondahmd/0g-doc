@@ -27,5 +27,5 @@
       2. [Storage Pricing](<0G Storage/incentive-mechanism/storage-pricing.md>)
       3. [Mining Reward](<0G Storage/incentive-mechanism/mining-reward.md>)
    4. [Deployment](broken-reference/)
-3. [Deployment and Integration](../run-a-node/deployment-and-integration.md)
+3. [Deployment and Integration](../run-a-node/storage-node-and-da-services.md)
 4. [Contract Addresses](contract-addresses.md)

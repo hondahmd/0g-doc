@@ -2,14 +2,14 @@
 
 0G System is composed of multiple components, each with its own functionalities. Detailed steps are provided as a guideline to deploy the whole and complete system.
 
-* [Prerequisite](deployment-and-integration.md#prerequisite)
-* [Storage Node](deployment-and-integration.md#id-1.-storage-node)
-* [Storage KV](deployment-and-integration.md#storage-kv)
-* [Data Availability Service](deployment-and-integration.md#data-availability-service)
-  * [Disperse Service](deployment-and-integration.md#disperse-service)
-  * [Retrieve Service](deployment-and-integration.md#retrieve-service)
-* [Storage Node CLI](deployment-and-integration.md#storage-node-cli)
-* [Integration Test](deployment-and-integration.md#integration-test)
+* [Prerequisite](storage-node-and-da-services.md#prerequisite)
+* [Storage Node](storage-node-and-da-services.md#id-1.-storage-node)
+* [Storage KV](storage-node-and-da-services.md#storage-kv)
+* [Data Availability Service](storage-node-and-da-services.md#data-availability-service)
+  * [Disperse Service](storage-node-and-da-services.md#disperse-service)
+  * [Retrieve Service](storage-node-and-da-services.md#retrieve-service)
+* [Storage Node CLI](storage-node-and-da-services.md#storage-node-cli)
+* [Integration Test](storage-node-and-da-services.md#integration-test)
 
 ### Prerequisite
 
@@ -139,7 +139,7 @@ cd run
 
 Second step is to launch the kv service.
 
-1. Follow the same steps to install dependencies and rust in [Stage 1](deployment-and-integration.md#id-2.-storage-node)
+1. Follow the same steps to install dependencies and rust in [Stage 1](storage-node-and-da-services.md#id-2.-storage-node)
 2. Download the source code
 
 ```bash
@@ -188,7 +188,7 @@ Note: The recommended system configuration is the same as the storage node.
 
 Next step is to start the 0GDA service which is the primary service to send requests to.
 
-1. Follow the same steps to install dependencies, go and rust in [Stage 1](deployment-and-integration.md#id-1.-storage-node)
+1. Follow the same steps to install dependencies, go and rust in [Stage 1](storage-node-and-da-services.md#id-1.-storage-node)
 2. Download the source code
 
 ```bash
@@ -403,7 +403,7 @@ cargo run -- zgda-disperse --rps <int> --max-out-standing <int> --url <endpoint>
 Note,
 
 * `rps` and `max-out-standing` are set to control the speed of the requests
-* `url` is the endpoint of the disperse service in [Stage 3](deployment-and-integration.md#disperse-service)
+* `url` is the endpoint of the disperse service in [Stage 3](storage-node-and-da-services.md#disperse-service)
 * `block-size` is the size of the total data in bytes
 * `chunk-size` is the same as the blob size in bytes of each request sent to the disperse service
 * `target-chunk-num` is the number of the chunks to define in 0GDA service. It's used to divide the blob into corresponding number of pieces. It's hard bounded by the blob size.
