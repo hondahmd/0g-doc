@@ -10,7 +10,7 @@
 
 ## Integration
 
-We provide a [SDK](https://github.com/0glabs/0g-js-storage-sdk) for users to easily integrate 0G Storage in their applications with the following features:
+We provide a [SDK](https://github.com/0glabs/0g-ts-sdk) for users to easily integrate 0G Storage in their applications with the following features:
 
 * File Merkle Tree Class
 * Flow Contract Types
@@ -22,7 +22,7 @@ We provide a [SDK](https://github.com/0glabs/0g-js-storage-sdk) for users to eas
 
 ## Deployment
 
-Please refer to [Deployment](../0G%20Storage/doc/install.md) page for detailed steps to compile and start a 0G Storage node.
+Please refer to [Deployment page](../../run-a-node/storage-node-and-da-services.md) for detailed steps to compile and start a 0G Storage node.
 
 ## Test
 
@@ -68,4 +68,3 @@ python sync_test.py
 1. Test failed due to blockchain full node rpc inaccessible.
    * Traceback: `node.wait_for_rpc_connection()`
    * Solution: unset the `http_proxy` and `https_proxy` environment variables if configured.
-
