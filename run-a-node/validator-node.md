@@ -5,9 +5,9 @@ This document outlines the steps to deploy your own validator node.
 ### Hardware Requirement
 
 ```
-- Memory: 8 GB RAM
-- CPU: 4 cores
-- Disk: 500 GB NVME SSD
+- Memory: 64-128 GB
+- CPU: 8 cores
+- Disk: 1 TB NVME SSD
 - Bandwidth: 100 MBps for Download / Upload
 ```
 
@@ -15,7 +15,7 @@ This document outlines the steps to deploy your own validator node.
 
 Make sure your server timezone configuration is UTC. Check your current timezone by running `timedatectl`
 
-Note: Having a different timezone configuration may cause a `LastResultHash` mismatch error and take down your node!
+> Note: Having a different timezone configuration may cause a `LastResultHash` mismatch error and take down your node!
 
 ### Install 0gchaind via CLI
 
@@ -38,11 +38,11 @@ We need to initialize the node to create all the necessary validator and node co
 0gchaind init <your_validator_name> --chain-id zgtendermint_16600-1
 ```
 
-Note: The validator name can only contain ASCII characters.
+> Note: the validator name can only contain ASCII characters.
 
 By default, the `init` command creates config and data folder under `~/.0gchain`(i.e `$HOME`). In the config directory, the most important files for configuration are `app.toml` and `config.toml`.
 
-> Note, you could specify `--home` to overwrite the default work directory.
+> Note: you could specify `--home` to overwrite the default work directory.
 
 ### Genesis & Seeds
 
@@ -97,7 +97,14 @@ Start the node and sync up to the latest block height. Note that the first time 
 0gchaind start
 ```
 
-Make sure you've synced your node to the latest block height before running the following steps.
+#### Garbage Collection Optimization
+
+To maximize sync speed for validators and other network providers that are running pruning nodes, the following settings are recommended:
+
+* Start 0gchaind process with environment variable and value `GOGC=900`; this instructs the golang garbage collector to wait until the heap has grown to 9x it's initial allocated size before running garbage collection
+* Start 0gchaind process with environment variable `GOMEMLIMIT` set to 66% of the total memory available to the 0gchaind process (e.g. `GOMEMLIMIT=40GB` for a node with 64 GB of memory) to ensure garbage collection runs whenever 66% of the total memory is used
+
+> Make sure you've synced your node to the latest block height before running the following steps.
 
 ### Create Validator
 
@@ -138,7 +145,7 @@ Check that it is in the validator set:
 0gchaind q staking validators -o json --limit=1000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '.tokens + " - " + .description.moniker' | sort -gr | nl
 ```
 
-Note that only top 125 staked validators will be selected as active validators.
+> Only top 125 staked validators will be selected as active validators.
 
 By any chance your validator is put in jail, use this command to unjail it
 
@@ -148,11 +155,11 @@ By any chance your validator is put in jail, use this command to unjail it
 
 ### Upgrading Your Node
 
-Note these instructions are for full nodes that have ran on previous versions of and would like to upgrade to the latest testnet version.
+These instructions are for full nodes that have ran on previous versions of and would like to upgrade to the latest testnet version.
 
 #### Reset Data
 
-Note: If the version you are upgrading to is not breaking from the previous one, you **should not** reset the data. If this is the case you can skip to Restart step.
+> Note: if the version you are upgrading to is not breaking from the previous one, you **should not** reset the data. If this is the case you can skip to Restart step.
 
 First, remove the outdated files and reset the data.
 
