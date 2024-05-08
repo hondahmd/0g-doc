@@ -52,6 +52,7 @@ Check the `genesis.json` file from [this link](https://github.com/0glabs/0g-chai
 
 ```bash
 sudo apt install -y unzip wget
+rm ~/.0gchain/config/genesis.json
 wget -P ~/.0gchain/config https://github.com/0glabs/0g-chain/releases/download/v0.1.0/genesis.json
 ```
 
