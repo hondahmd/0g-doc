@@ -1,4 +1,6 @@
-# Learn
+# Developers
+
+In this section we provide a comprehensive suite of resources for developers to learn more about the 0G ecosystem, including how to get started.
 
 1. [0G DA](<0G DA/>)
    1. [Architecture](<0G DA/architecture/>)
