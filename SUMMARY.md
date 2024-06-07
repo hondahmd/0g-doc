@@ -1,7 +1,7 @@
 # Table of contents
 
 * [0G System](README.md)
-* [Learn](docs/README.md)
+* [Developers](docs/README.md)
   * [0G DA](<docs/0G DA/README.md>)
     * [Introduction](<docs/0G DA/introduction.md>)
     * [Architecture](<docs/0G DA/architecture/README.md>)
