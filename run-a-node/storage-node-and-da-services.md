@@ -90,6 +90,9 @@ cargo build --release
 6. Update the `run/config.toml`
 
 ```toml
+# enr address, must fill your instance's public ip to support peer discovery
+network_enr_address
+
 # p2p port
 network_libp2p_port
 
@@ -118,6 +121,7 @@ network_dir
 # your private key with 64 length
 # do not include leading 0x
 # do not omit leading 0
+# must fill if you want to participate in the pora and get mining reward
 miner_key
 ```
 
