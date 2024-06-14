@@ -33,6 +33,7 @@
       * [Node API](docs/0g-storage/rpc-api/node-api.md)
   * [Contract Addresses](docs/contract-addresses.md)
 * [Run a node](run-a-node/README.md)
+  * [Testnet Configuration](run-a-node/testnet-configuration.md)
   * [Validator Node](run-a-node/validator-node.md)
   * [Storage Node And DA Services](run-a-node/storage-node-and-da-services.md)
 * [Contributing](contributing.md)
