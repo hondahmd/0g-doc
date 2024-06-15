@@ -5,11 +5,11 @@
 * [Prerequisite](storage-node-and-da-services.md#prerequisite)
 * [Storage Node](storage-node-and-da-services.md#storage-node)
 * [Storage KV](storage-node-and-da-services.md#storage-kv)
-* [Data Availability Service](storage-node-and-da-services.md#data-availability-service)
+<!-- * [Data Availability Service](storage-node-and-da-services.md#data-availability-service)
   * [Disperse Service](storage-node-and-da-services.md#disperse-service)
-  * [Retrieve Service](storage-node-and-da-services.md#retrieve-service)
+  * [Retrieve Service](storage-node-and-da-services.md#retrieve-service) -->
 * [Storage Node CLI](storage-node-and-da-services.md#storage-node-cli)
-* [Integration Test](storage-node-and-da-services.md#integration-test)
+<!-- * [Integration Test](storage-node-and-da-services.md#integration-test) -->
 
 ### Prerequisite
 
@@ -182,7 +182,7 @@ cd run
 ```
 
 Note: The recommended system configuration is the same as the storage node.
-
+<!-- 
 ### Data Availability Service
 
 Next step is to start the 0GDA service which is the primary service to send requests to.
@@ -338,7 +338,7 @@ make run
 
 Note: You can deploy all these services on one instance. The bottleneck is at the encoder which requires much cpu computation. As a result, the number of CPU cores is linearly related to the performance (Mbps). It is recommended to have at least 32 CPU cores for your da services. (`c6i.8xlarge` instance type if you want to deploy on AWS).
 
-Also deploy storage node, kv and da services in the same region can increase the throughput. It 's experimented that on AWS, with `m7i.xlarge` storage instance and `c6i.12xlarge` da instance, the throughput can reach 15 Mbps.
+Also deploy storage node, kv and da services in the same region can increase the throughput. It 's experimented that on AWS, with `m7i.xlarge` storage instance and `c6i.12xlarge` da instance, the throughput can reach 15 Mbps. -->
 
 ### Storage Node CLI
 
@@ -370,7 +370,7 @@ Check [Contract Addresses](../docs/contract-addresses.md) to get the contract ad
 
 For the storage node rpc endpoint, you could use the team deployed [https://rpc-storage-testnet.0g.ai](https://rpc-storage-testnet.0g.ai) or you could deploy yourself by following the above instructions.
 
-### Integration Test
+<!-- ### Integration Test
 
 If you want to conduct integration tests on the entire DA service, you could use the [benchmark tool](https://github.com/0glabs/0g-da-example-rust) that we provided.
 
@@ -405,6 +405,6 @@ Note,
 * `url` is the endpoint of the disperse service in [Stage 3](storage-node-and-da-services.md#disperse-service)
 * `block-size` is the size of the total data in bytes
 * `chunk-size` is the same as the blob size in bytes of each request sent to the disperse service
-* `target-chunk-num` is the number of the chunks to define in 0GDA service. It's used to divide the blob into corresponding number of pieces. It's hard bounded by the blob size.
+* `target-chunk-num` is the number of the chunks to define in 0GDA service. It's used to divide the blob into corresponding number of pieces. It's hard bounded by the blob size. -->
 
 ### You are all set !
