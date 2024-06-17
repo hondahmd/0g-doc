@@ -31,6 +31,7 @@
       * [Mining Reward](<docs/0G Storage/incentive-mechanism/mining-reward.md>)
     * [RPC API](docs/0g-storage/rpc-api/README.md)
       * [Node API](docs/0g-storage/rpc-api/node-api.md)
+  * [SDK](docs/sdk.md)
   * [Contract Addresses](docs/contract-addresses.md)
 * [Run a node](run-a-node/README.md)
   * [Testnet Configuration](run-a-node/testnet-configuration.md)
