@@ -154,7 +154,7 @@ By any chance your validator is put in jail, use this command to unjail it
 0gchaind tx slashing unjail --from <key_name> --gas=500000 --gas-prices=99999neuron -y
 ```
 
-### Upgrading Your Node
+### Upgrade Your Node
 
 These instructions are for full nodes that have ran on previous versions of and would like to upgrade to the latest testnet version.
 
@@ -177,3 +177,37 @@ Your node is now in a pristine state while keeping the original `priv_validator.
 0gchaind start
 ```
 
+### Migrate Your Node
+
+#### Important files
+
+If you are migrating your node to a different server, first you need to recover your wallet account on your new server。 If you have stored your wallet mnemonic, you can restore your account by executing
+
+```bash
+0gchaind keys add <your_account_name> --eth --recover
+```
+
+and paste your mnemonic to recover the account.
+
+However, if by any chance you did not store your mnemonic, you need to make sure to store and move the following files to the new server at the same place under your `$HOME`.
+
+* `$HOME/xx.address`
+* `$HOME/xx.info`
+* `$HOME/keyhash`
+
+Another important file to store is `$HOME/config/priv_validator_key.json`. This file is generated at the init step and is the key file for your onchian signing.
+
+#### Step
+
+Follow the same setup process above to start syncing your node to the latest block height
+
+> Warning: Do not migrate the files before you finish syncing the blocks. This is to avoid double signing.
+
+> Warning: Do not stop your old server before you finish syncing the blocks. This is to avoid getting jailed for long downtime.
+
+Once you finished syncing the blocks.
+
+1. Stop your new server.
+2. Copy and past the files mentioned in [#important-files](validator-node.md#important-files "mention") to the `$HOME` on your new server.
+3. Stop your old server.
+4. Restart your new server.
